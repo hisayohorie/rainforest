@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(param[:id])
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(param[:id])
   end
-  def created
+  def create
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_url
